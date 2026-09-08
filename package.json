@@ -1,0 +1,15 @@
+{
+  "name": "card-url-import-sillytavern",
+  "version": "1.0.1",
+  "private": true,
+  "description": "SillyTavern extension for importing PNG character cards from direct URLs",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node tests/card-url-source.node.mjs && node tests/card-url-import.node.mjs",
+    "check": "node --check card-source.js && node --check import-service.js && node --check index.js"
+  }
+}

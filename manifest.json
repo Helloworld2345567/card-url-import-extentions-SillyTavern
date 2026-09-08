@@ -1,0 +1,15 @@
+{
+    "display_name": "角色卡链接导入",
+    "loading_order": 20,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Helloworld2345567",
+    "version": "1.0.1",
+    "minimum_client_version": "1.18.0",
+    "hooks": {
+        "activate": "init"
+    },
+    "homePage": "https://github.com/Helloworld2345567/card-url-import-extentions-SillyTavern"
+}

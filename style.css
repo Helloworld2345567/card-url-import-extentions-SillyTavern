@@ -1,0 +1,44 @@
+#card_url_import .inline-drawer-content {
+    padding: 8px 0;
+}
+
+#card_url_import textarea {
+    width: 100%;
+    resize: vertical;
+    overflow-wrap: anywhere;
+}
+
+#card_url_import small {
+    display: block;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+#card_url_import .card-url-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+#card_url_import [hidden] {
+    display: none !important;
+}
+
+#card_url_import button:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+#card_url_status {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#card_url_status[data-state="error"] {
+    color: #f28b82;
+}
+
+#card_url_status[data-state="success"] {
+    color: #81c995;
+}
