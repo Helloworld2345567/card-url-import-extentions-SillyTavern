@@ -244,6 +244,13 @@ function normalizedDiscordUrl(parsed) {
     const rawQuery = parsed.search.startsWith('?') ? parsed.search.slice(1) : '';
     const keptQuery = rawQuery.split('&').filter(segment => {
         const rawKey = segment.split('=', 1)[0];
+        // Discord sometimes appends an empty query item (`&=`) before the
+        // image transformation parameters.  It has no meaning and would
+        // otherwise survive as a dangling `&=` after the known parameters
+        // are removed.
+        if (!segment || rawKey === '') {
+            return false;
+        }
         let key = rawKey;
         try {
             key = decodeURIComponent(rawKey.replace(/\+/g, ' '));
@@ -253,7 +260,7 @@ function normalizedDiscordUrl(parsed) {
         }
         return !DISCORD_IMAGE_QUERY_KEYS.has(key.toLowerCase());
     });
-    const nextQuery = keptQuery.length && keptQuery.some(segment => segment !== '')
+    const nextQuery = keptQuery.length
         ? `?${keptQuery.join('&')}`
         : '';
     parsed.search = nextQuery;

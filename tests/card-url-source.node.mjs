@@ -76,6 +76,16 @@ test('also strips Discord CDN transform parameters while preserving raw unknown 
     assert.equal(result.normalized, true);
 });
 
+test('removes transform parameters after Discord adds an empty query item', () => {
+    const result = normalizeCardUrl('https://media.discordapp.net/attachments/1375164604052803675/1388047353549684906/3.0.png'
+        + '?ex=6aa1a915&is=6aa05795&hm=756789de2c0fe5f9f7361b1de92341715fe4585bb32e8bd93a71727dc611aefb'
+        + '&=&format=webp&quality=lossless');
+
+    assert.equal(result.url, 'https://cdn.discordapp.com/attachments/1375164604052803675/1388047353549684906/3.0.png'
+        + '?ex=6aa1a915&is=6aa05795&hm=756789de2c0fe5f9f7361b1de92341715fe4585bb32e8bd93a71727dc611aefb');
+    assert.equal(result.normalized, true);
+});
+
 test('keeps non-Discord PNG query parameters unchanged', () => {
     const source = 'https://cards.example.test/path/My%20Card.png?format=webp&quality=lossless&x=a+b&sig=%2F';
     const result = normalizeCardUrl(source);

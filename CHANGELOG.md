@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+
+- 清理 Discord 图片链接中空查询项 `&=`，同时移除 `format=webp` 和 `quality=lossless` 等预览转换参数。
+- 新增带空查询项的 Discord URL 回归测试。
+
 ## 1.0.1
 
 - 发布独立 GitHub 仓库，支持从 SillyTavern 扩展管理页安装、检查更新和管理。

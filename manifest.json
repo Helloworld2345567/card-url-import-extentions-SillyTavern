@@ -6,7 +6,7 @@
     "js": "index.js",
     "css": "style.css",
     "author": "Helloworld2345567",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "minimum_client_version": "1.18.0",
     "hooks": {
         "activate": "init"

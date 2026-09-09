@@ -70,3 +70,5 @@ npm test
 ## 许可证
 
 MIT，见 [LICENSE](LICENSE)。
+
+Discord 预览链接即使在 &= 空查询项出现在转换参数前时，也会被清理为可下载的原始 CDN PNG 地址。
